@@ -4,39 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" >
+    <!-- CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
     <title><?= $title; ?> | imsgames</title>
-  </head>
-  <body>
+</head>
+<body>
 
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/">imsgames</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<header class="header">
+    <nav class="nav">
+        <a class="nav-brand" href="/">imsgames</a>
+
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="nav-link" href="/game">Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/requests">Requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signin/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/signup">Sign up</a>
+            </li>
+        </ul>
+
+        <button class="nav-button" type="button" onclick="toggleNavMenu(event)">
+            <i class='bx bxs-grid-alt'></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/game">Games</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/kommentar">Meine Kommentar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/signin/login">Sign In</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/user/create">Sign Up</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <main class="container">
-      <h1><?= $heading; ?></h1>
+<main class="container">
+    <h1><?= $heading; ?></h1>
