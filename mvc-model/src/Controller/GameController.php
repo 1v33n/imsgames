@@ -8,39 +8,47 @@ use App\View\View;
 /**
  * Siehe Dokumentation im DefaultController.
  */
-class UserController
+class GameController
 {
     public function index()
     {
+        $view = new View('game/index');
+        $view->title = 'Games';
+        $view->heading = 'Games';
+        // to display all games
         $gameRepository = new GameRepository();
+        $view->games = $gameRepository->readAll();
 
-        $view = new View('user/index');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
-        $view->users = $gameRepository->readAll();
         $view->display();
     }
 
-    public function create()
-    {
-        $view = new View('user/create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
+    public function create() {
+
+    }
+
+    // to send data by email
+    public function sendRequest() {
+    }
+
+    // view to allow user sending us a request of their game
+    public function request() {
+        $view = new View('game/request');
+        $view->title = 'Request';
+        $view->heading = 'Request';
         $view->display();
     }
 
-    public function doCreate()
-    {
-        if (isset($_POST['send'])) {
-            $name = htmlentities($_POST['name']);
-            $dir = htmlentities($_POST['dir']) ;
+    public function selected() {
+        $view = new View('game/selected');
 
-            $gameRepository = new GameRepository();
-            $gameRepository->create($name, $dir);
-        }
+        // to get game with url id
+        $gameRepository = new GameRepository();
+        $game = $gameRepository->readById($_GET['game_id']);
 
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        $view->game = $game;
+        $view->title = $game->name;
+        $view->heading = $game->name;
+        $view->display();
     }
 
     public function delete()
