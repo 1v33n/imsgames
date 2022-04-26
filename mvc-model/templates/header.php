@@ -21,7 +21,7 @@
                 <a class="nav-link" href="/game">Games</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/requests">Requests</a>
+                <a class="nav-link" href="/request">Requests</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/signin/login">Login</a>
