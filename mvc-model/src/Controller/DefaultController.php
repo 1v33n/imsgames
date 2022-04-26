@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\View\View;
+use App\Service\AuthenticationService;
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -41,7 +42,7 @@ class DefaultController
         //   "default_index" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
         $view = new View('default/index');
-        $view->isLoggedIn = isset($_SESSION['id']);
+        $view->isLoggedIn = AuthenticationService::isAuthenticated();
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
         $view->display();

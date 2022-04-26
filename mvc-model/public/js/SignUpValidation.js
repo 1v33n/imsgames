@@ -44,6 +44,8 @@ function validateForm() {
       document.getElementById("message2").innerHTML = "**Passwords are not same";  
       return false;  
     } else {  
-      alert ("Your password created successfully"); 
-    }  
+      return "";
+    }
+
+      
  }  
