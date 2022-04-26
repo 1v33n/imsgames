@@ -8,7 +8,7 @@
     <body>
         <main class="grid">
             <article>
-                <form action="/user" method="post" class="col-6" onclick="validateForm()">
+                <form action="/user" method="post" class="col-6" onsubmit="validateForm()">
                     <div class="form-group">
                         <label for="username">Benutzername</label>
                         <input type="text" id="username" name="username" placeholder="Geben Sie ihren Benutzernamen ein." class="form-control">
