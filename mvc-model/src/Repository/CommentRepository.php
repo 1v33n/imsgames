@@ -16,7 +16,7 @@ class CommentRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'user';
+    protected $tableName = 'comment';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -31,14 +31,12 @@ class CommentRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function create($username, $password)
+    public function create($comment, $user_id, $game_id)
     {
-        $password = hash('sha256', $password);
-
-        $query = "INSERT INTO $this->tableName (username, password) VALUES (?, ?)";
+        $query = "INSERT INTO $this->tableName (comment, user_id, game_id) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ss', $username, $password);
+        $statement->bind_param('sii', $comment, $user_id, $game_id);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
