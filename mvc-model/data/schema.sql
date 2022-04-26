@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `game`;
 CREATE TABLE IF NOT EXISTS `game` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `site` text NOT NULL,
+  `dir` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,8 +107,8 @@ ALTER TABLE `statistic`
 -- Daten für Tabelle `game`
 --
 
-INSERT INTO `game` (`id`, `name`, `site`) VALUES(1, 'TicTacToe', 'TicTacToe');
-INSERT INTO `game` (`id`, `name`, `site`) VALUES(2, '2048', '2048');
+INSERT INTO `game` (`id`, `name`, `dir`) VALUES(1, 'TicTacToe', 'TicTacToe');
+INSERT INTO `game` (`id`, `name`, `dir`) VALUES(2, '2048', '2048');
 
 
 -- Constraints der Tabelle `game`
