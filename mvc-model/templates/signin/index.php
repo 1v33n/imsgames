@@ -24,7 +24,7 @@
             <article>
                 <p>
                     Du hast noch kein Account?<br>
-                    Dann registriere dich jetzt <a href="/user/signup">hier</a>.
+                    Dann registriere dich jetzt <a href="/user/create">hier</a>.
                 </p>
 
             </article>
