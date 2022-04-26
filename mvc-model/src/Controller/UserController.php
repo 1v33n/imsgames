@@ -31,18 +31,17 @@ class UserController
         }
     }
     
-    public function signup(){
-        $view = new View('signup/index');
-
+    public function create()
+    {
+        $view = new View('user/create');
         $view->title = 'Registrieren';
         $view->heading = 'Registrieren';
         $view->display();
+
     }
 
-
-    public function create()
+    public function doCreate()
     {
-
         if (isset($_POST['send'])) {
             $username = htmlentities($_POST['username']);
             $password = htmlentities($_POST['password']) ;
@@ -56,7 +55,7 @@ class UserController
                 echo "Sign up fehlgeschlagen";
             }
         }
-
+        //header('Location: /default');
     }
 
 
