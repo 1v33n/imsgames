@@ -14,6 +14,7 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `imsgames`
 --
+DROP DATABASE IF EXISTS `imsgames`;
 CREATE DATABASE IF NOT EXISTS `imsgames` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `imsgames`;
 
@@ -75,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `game` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
