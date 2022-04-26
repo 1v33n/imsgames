@@ -108,4 +108,11 @@ ALTER TABLE `statistic`
 
 INSERT INTO `game` (`id`, `name`, `site`) VALUES(1, 'TicTacToe', 'TicTacToe');
 INSERT INTO `game` (`id`, `name`, `site`) VALUES(2, '2048', '2048');
+
+
+-- Constraints der Tabelle `game`
+--
+ALTER TABLE `game`
+  ADD `description` text
+;
 COMMIT;
