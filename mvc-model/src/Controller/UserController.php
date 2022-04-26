@@ -42,16 +42,13 @@ class UserController
 
     public function create()
     {
-        if(empty(htmlentities($_POST['username']))){
-            header('Location: /user/signup');
-        }
-        else{
+
+        if (isset($_POST['send'])) {
             $username = htmlentities($_POST['username']);
-            $password = htmlentities($_POST['password']);
+            $password = htmlentities($_POST['password']) ;
 
             $userRepository = new UserRepository();
             $userRepository->create($username, $password);
-
             if(AuthenticationService::login($username, $password)){
                 header('Location: /default');
             }
