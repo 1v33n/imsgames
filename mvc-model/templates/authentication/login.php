@@ -1,4 +1,4 @@
-<form action="/user/create/" class="form" method="post">
+<form action="signin/login" class="form" method="post">
     <div class="form-heading">
         <h2 class="form-title"><?= $heading ?></h2>
     </div>
@@ -18,5 +18,5 @@
         <p>Dann registriere dich <a class="link" href="/user/signup">hier</a></p>
     </div>
 
-    <button class="form-submit" type="submit" disabled>Submit</button>
+    <button class="form-submit" type="submit">Submit</button>
 </form>

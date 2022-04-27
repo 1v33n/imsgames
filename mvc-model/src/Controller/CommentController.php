@@ -10,29 +10,18 @@ use App\View\View;
  */
 class CommentController
 {
-    public function index()
-    {
-        $commentRepository = new CommentRepository();
-
-        $view = new View('user/index');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
-        $view->users = $commentRepository->readAll();
-        $view->display();
-    }
-    public function doCreate()
+    public function create()
     {
         if (isset($_POST['send'])) {
             $comment = htmlentities($_POST['comment']) ;
             $game_id = htmlentities($_POST['game_id']) ;
-            $user_id = htmlentities($_POST['user_id']) ;
+            $user_id = htmlentities($_SESSION['id']);
 
             $commentRepository = new CommentRepository();
-            $commentRepository->create($comment, $game_id, $game_id);
+            $commentRepository->create($comment, $game_id, $user_id);
         }
-
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+         header('Location: /game/selected?id='. $_GET['id']);
     }
 
     public function delete()

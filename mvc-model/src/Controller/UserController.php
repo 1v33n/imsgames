@@ -27,7 +27,7 @@ class UserController
             $view->display();
         }
         else{
-            header('Location: /signin/login');
+            header('Location: /signin');
         }
     }
     

@@ -10,11 +10,13 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <object class="embed-responsive-item" data="/games/<?= $game->dir; ?>/index.html" width="500" height="200"></object>
                 </div>
-
-                <a href="/kommentar/create?id=<?= $game->id; ?>"><button type="submit">Neuer Kommentar</button></a>
+                <form action="/comment/create?id=<?= $game->id; ?>" method="post">
+                    <textarea name="comment" id="" cols="20" rows="5"></textarea>
+                    <button type="submit">Neuer Kommentar</button>
+                </form>
                 <?php if (empty($kommentarliste)): ?>
                 <div class="dhd">
-                    <h2 class="item title">Hoopla! Kein Kommentar gefunden.</h2>
+                    <h2 class="item title">Kein Kommentar gefunden.</h2>
                 </div>
                 <?php else: ?>
                     <?php foreach ($kommentarliste as $kommentar): ?>

@@ -16,6 +16,7 @@ class GameController
         $view->title = 'Games';
         $view->heading = 'Games';
         // to display all games
+        $view->isLoggedIn = isset($_SESSION['id']);
         $gameRepository = new GameRepository();
         $view->games = $gameRepository->readAll();
 
