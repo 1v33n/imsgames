@@ -5,7 +5,7 @@
 
     <div class="form-field">
         <input class="form-input" id="username" name="username" placeholder="Benutzername" type="text" required>
-        <i class='bx bxs-user form-icon' required></i>
+        <i class='bx bxs-user form-icon'></i>
     </div>
     <div class="form-field">
         <input class="form-input" id="password" name="password" placeholder="Passwort" type="password" required>
