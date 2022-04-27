@@ -12,7 +12,6 @@
 </div>";
         }
     ?>
-
     <div class="form-field">
         <input class="form-input" name="username" type="text" placeholder="Benutzername" onkeyup="validateUsername(event)" required>
         <i class='bx bxs-user form-icon'></i>
@@ -27,6 +26,5 @@
         <p>Hast du noch keinen Account?</p>
         <p>Dann registriere dich <a class="link" href="/user/signup">hier</a></p>
     </div>
-
     <button class="form-submit" id="submit" type="submit">Anmelden</button>
 </form>

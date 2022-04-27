@@ -44,4 +44,8 @@ class CommentRepository extends Repository
 
         return $statement->insert_id;
     }
+
+    public function getByGameId($game_id){
+
+    }
 }

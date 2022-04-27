@@ -13,7 +13,7 @@ class SigninController
    * Es ist da um die Index view anzupassen (titel, heading...)
    */
 
-    public function index()
+    public function login()
     {
         if(AuthenticationService::login($_POST['username'], $_POST['password'])){
             header('Location: /default');
@@ -23,12 +23,12 @@ class SigninController
         }
     }
 
-    public function login(){
+    public function index(){
         $view = new View('signin/index');
 
         $view->title = 'Anmelden';
         $view->heading = 'Anmelden';
-        $view->msg = htmlentities($_GET['msg'] ?: null);
+        $view->msg = htmlentities((!empty($_GET['msg'])) ? $_GET['msg'] : null);
         $view->display();
     }
 
