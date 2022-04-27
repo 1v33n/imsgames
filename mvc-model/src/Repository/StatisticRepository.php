@@ -44,4 +44,8 @@ class StatisticRepository extends Repository
 
         return $statement->insert_id;
     }
+
+    public function getByParams($user_id, $game_id){
+
+    }
 }

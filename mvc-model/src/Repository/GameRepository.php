@@ -24,8 +24,8 @@ class GameRepository extends Repository
      * Das Passwort wird vor dem ausführen des Queries noch mit dem SHA1
      *  Algorythmus gehashed.
      *
-     * @param $firstName Wert für die Spalte firstName
-     * @param $lastName Wert für die Spalte lastName
+     * @param $name Wert für die Spalte Name
+     * @param $dir Wert für die Spalte lastName
      * @param $email Wert für die Spalte email
      * @param $password Wert für die Spalte password
      *
