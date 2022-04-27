@@ -8,7 +8,7 @@ use App\View\View;
 /**
  * Siehe Dokumentation im DefaultController.
  */
-class UserController
+class CommentController
 {
     public function index()
     {
@@ -20,15 +20,6 @@ class UserController
         $view->users = $commentRepository->readAll();
         $view->display();
     }
-
-    public function create()
-    {
-        $view = new View('user/create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
-        $view->display();
-    }
-
     public function doCreate()
     {
         if (isset($_POST['send'])) {
