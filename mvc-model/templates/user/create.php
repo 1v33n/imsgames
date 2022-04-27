@@ -4,16 +4,34 @@
     </div>
 
     <div class="form-field">
-        <input class="form-input" id="username" name="username" placeholder="Benutzername" type="text" required>
-        <i class='bx bxs-user form-icon'></i>
+        <input class="form-input" name="username" placeholder="Benutzername" type="text" onkeyup="validateUsername(event)" onfocusout="validateUsername(event)" required>
+        <i class="bx bxs-user"></i>
+        <i class="bx bx-x-circle"></i>
+        <i class="bx bx-check-circle"></i>
+
+        <div class="tooltip-box">
+            <p class="tooltip-message"></p>
+        </div>
     </div>
     <div class="form-field">
-        <input class="form-input" id="password" name="password" placeholder="Passwort" type="password" required>
-        <i class='bx bxs-lock-alt form-icon'></i>
+        <input class="form-input" id="password" name="password" placeholder="Passwort" type="password" onkeyup="validatePassword(event)" onfocusout="validatePassword(event)" required>
+        <i class="bx bxs-lock-alt"></i>
+        <i class="bx bx-x-circle"></i>
+        <i class="bx bx-check-circle"></i>
+
+        <div class="tooltip-box">
+            <p class="tooltip-message"></p>
+        </div>
     </div>
     <div class="form-field">
-        <input class="form-input" id="passwordConfirm" placeholder="Passwort bestätigen" type="password" required>
-        <i class='bx bxs-lock-alt form-icon'></i>
+        <input class="form-input" placeholder="Passwort bestätigen" type="password" onkeyup="validateConfirmedPassword(event)" onfocusout="validateConfirmedPassword(event)" required>
+        <i class="bx bxs-lock-alt"></i>
+        <i class="bx bx-x-circle"></i>
+        <i class="bx bx-check-circle"></i>
+
+        <div class="tooltip-box">
+            <p class="tooltip-message"></p>
+        </div>
     </div>
 
     <div class="form-text">
@@ -21,5 +39,5 @@
         <p>Dann melde dich <a class="link" href="/authentication">hier</a> an</p>
     </div>
 
-    <button class="form-submit" name="send" type="submit">Absenden</button>
+    <button class="form-submit" id="submit" name="send" type="submit" disabled>Registrieren</button>
 </form>
