@@ -81,6 +81,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `request`
+--
+
+DROP TABLE IF EXISTS `request`;
+CREATE TABLE IF NOT EXISTS `request` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL UNIQUE,
+  `link` varchar(255) NOT NULL UNIQUE,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Constraints der exportierten Tabellen
 --
