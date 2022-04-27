@@ -15,7 +15,7 @@
 
     <div class="form-field">
         <input class="form-input" type="text" id="email" name="email" placeholder="Email" required>
-        <i class='bx bxs-user form-icon'></i>
+        <i class='bx bx-at form-icon'></i>
     </div>
 
     <div class="form-field">
