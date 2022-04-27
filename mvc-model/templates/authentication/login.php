@@ -1,4 +1,4 @@
-<form action="/signin/login" class="form" method="post">
+<form action="/authentication/login" class="form" method="post">
     <div class="form-heading">
         <h2 class="form-title"><?= $heading ?></h2>
     </div>

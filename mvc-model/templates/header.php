@@ -28,7 +28,7 @@
                 <a class="nav-link" href="/game/request">Requests</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/authentication/login">Login</a>
+                <a class="nav-link" href="/authentication">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/signup">Sign up</a>
