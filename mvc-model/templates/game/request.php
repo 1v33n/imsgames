@@ -14,6 +14,11 @@
     </div>
 
     <div class="form-field">
+        <input class="form-input" type="text" id="email" name="email" placeholder="Email" required>
+        <i class='bx bxs-user form-icon'></i>
+    </div>
+
+    <div class="form-field">
         <input class="form-input" type="text" id="git" name="git"  placeholder="Github Repository" required>
         <i class='bx bxl-github form-icon'></i>
     </div>
