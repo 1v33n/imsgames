@@ -78,4 +78,8 @@ class ConnectionHandler
         // Verbindung zurückgeben
         return self::$connection;
     }
+
+    public static function escape($value) {
+        return mysqli_real_escape_string(self::getConnection(), $value);
+    }
 }
