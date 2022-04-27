@@ -1,7 +1,7 @@
 Hallo Welt!<br>
 <?php
     if($isLoggedIn) {
-        echo "<a class='btn btn-danger' href='/signin/logout'>Logout</a>";
+        echo "<a href='/authentication/logout'>Logout</a>";
     }
     else{
         echo "ausgeloggt";
