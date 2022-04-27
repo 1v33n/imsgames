@@ -8,6 +8,10 @@
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 
+    <!-- JS -->
+    <script src="/js/validator.js"></script>
+    <script src="/js/toggler.js"></script>
+
     <title><?= $title; ?> | imsgames</title>
 </head>
 <body>
