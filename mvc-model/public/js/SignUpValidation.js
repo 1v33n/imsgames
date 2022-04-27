@@ -46,6 +46,4 @@ function validateForm() {
     } else {  
       return "";
     }
-
-      
  }  

@@ -1,129 +1,213 @@
 :root {
-  --dark: #212529;
-  --light: #f8f9fa;
-  --nav-height: 70px;
+    --dark: #212529;
+    --light: #f8f9fa;
+    --nav-height: 70px;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 body {
-  color: #212529;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  margin-bottom: 60px;
+    color: #212529;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .header {
-  background-color: var(--light);
-  box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
-  position: relative;
-  width: 100%;
-  z-index: 100;
+    background-color: var(--light);
+    box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--nav-height);
-  flex-direction: row;
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 1rem;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 0 1rem;
+    position: relative;
+    width: 100vw;
 }
 
 .nav-brand {
-  color: var(--dark);
-  font-size: 24px;
-  font-weight: 700;
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .nav-list {
-  display: flex;
-  gap: 2rem;
-  position: relative;
+    display: flex;
+    gap: 2rem;
+    position: relative;
 }
 
 .nav-link {
-  color: var(--dark);
-  font-size: 17px;
-  font-weight: 600;
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .nav-button {
-  background-color: transparent;
-  border: none;
-  display: none;
-  padding: 0;
+    background-color: transparent;
+    border: none;
+    display: none;
+    padding: 0;
 }
 
 .container {
-  display: flex;
-  height: fit-content;
-  padding: 0 1rem;
-  margin: 0 auto;
-  max-width: 1024px;
-  width: 100%;
+    display: flex;
+    padding: 0 1rem;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1024px;
+    height: fit-content;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.form {
+    box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 380px;
+    width: 100%;
+}
+
+.form-title {
+    font-size: 28px;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.form-input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    position: relative;
+    height: 46px;
+    font-size: 1rem;
+    padding: 0 2rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-input::placeholder {
+    color: #ccc;
+}
+
+.form-input:is(:focus, :valid) {
+    border-bottom: 2px solid #043248;
+}
+
+.form-input:is(:focus, :valid) ~ .form-icon {
+    color: #043248;
+}
+
+.form-icon {
+    color: #ccc;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-text {
+    font-size: 15px;
+    margin: 1rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.link {
+    color: #043248;
+    font-weight: 500;
+}
+
+.form-submit {
+    background-color: #043248;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    width: 100%;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+    position: relative;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
 }
 
 @media only screen and (max-width: 580px) {
-  .nav-list {
-    background-color: var(--light);
-    box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    position: absolute;
-    left: 5%;
-    top: -250%;
-    width: 90%;
-    transition: 300ms;
-  }
+    .nav-list {
+        background-color: var(--light);
+        box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        position: absolute;
+        left: 5%;
+        top: -250%;
+        width: 90%;
+        transition: 300ms;
+    }
 
-  .nav-list.show {
-    top: calc(var(--nav-height) + 1rem);
-  }
+    .nav-list.show {
+        top: calc(var(--nav-height) + 1rem);
+    }
 
-  .nav-link {
-    width: 100%;
-  }
+    .nav-link {
+        width: 100%;
+    }
 
-  .nav-button {
-    display: block;
-    line-height: 0;
-    z-index: 100;
-  }
+    .nav-button {
+        display: block;
+        line-height: 0;
+        z-index: 100;
+    }
 
-  .bxs-grid-alt {
-    font-size: 24px;
-    padding: 2px;
-  }
+    .bxs-grid-alt {
+        font-size: 24px;
+        padding: 2px;
+    }
 }

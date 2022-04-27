@@ -24,7 +24,7 @@
                 <a class="nav-link" href="/requests">Requests</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/signin/login">Login</a>
+                <a class="nav-link" href="/authentication/login">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/signup">Sign up</a>
@@ -38,4 +38,4 @@
 </header>
 
 <main class="container">
-    <h1><?= $heading; ?></h1>
+    <div class="wrapper">
