@@ -6,7 +6,7 @@
     <body>
         <main class="grid">
             <article>
-                <form action="" method="post" class="wrapper">
+                <form action="/game/sendRequest" method="post" class="wrapper">
                 <div class="form-group">
                         <label for="fname">Vorname</label>
                         <input type="text" id="fname" name="fname" placeholder="Geben Sie Ihren Vornamen ein." class="form-control">
