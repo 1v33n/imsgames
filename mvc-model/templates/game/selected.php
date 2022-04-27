@@ -8,22 +8,20 @@
         <main class="grid">
             <article>
                 <div class="embed-responsive embed-responsive-16by9">
+                    <object class="embed-responsive-item" data="/games/<?= $game->dir; ?>/index.html" width="500" height="200"></object>
+                </div>
 
-                <object data="/games/<?= $game->site; ?>/index.html" class="embed-responsive-item">
-                </object>
-            </div>
-
-              <a href="/kommentar/create?id=<?= $game->id; ?>"><button type="submit">Neuer Kommentar</button></a>
-              <?php if (empty($kommentarliste)): ?>
-              <div class="dhd">
-                <h2 class="item title">Hoopla! Kein Kommentar gefunden.</h2>
-              </div>
-              <?php else: ?>
-                <?php foreach ($kommentarliste as $kommentar): ?>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <?= $kommentar->titel; ?>
-                    </div>
+                <a href="/kommentar/create?id=<?= $game->id; ?>"><button type="submit">Neuer Kommentar</button></a>
+                <?php if (empty($kommentarliste)): ?>
+                <div class="dhd">
+                    <h2 class="item title">Hoopla! Kein Kommentar gefunden.</h2>
+                </div>
+                <?php else: ?>
+                    <?php foreach ($kommentarliste as $kommentar): ?>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <?= $kommentar->titel; ?>
+                        </div>
                     <div class="panel-body">
                         <?= $kommentar->kommentar; ?>
                     </div>

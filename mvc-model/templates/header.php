@@ -29,6 +29,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/user/signup">Sign up</a>
             </li>
+            
         </ul>
 
         <button class="nav-button" type="button" onclick="toggleNavMenu(event)">
