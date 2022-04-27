@@ -93,6 +93,28 @@ body {
     width: 100%;
 }
 
+.error-box {
+    background-color: #FF6666;
+    border-radius: 4px;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 0;
+    padding: 4px 8px 4px 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.error-message {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.bx-error-circle {
+    align-self: center;
+    font-size: 20px;
+}
+
 .form {
     box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -162,10 +184,19 @@ body {
     background-color: #043248;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
     color: white;
     font-size: 1rem;
     padding: 0.75rem 0;
     width: 100%;
+}
+
+.form-submit:hover {
+    transform: scale(1.005);
+}
+
+.form-submit:disabled {
+    opacity: 0.6;
 }
 
 .footer {

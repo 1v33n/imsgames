@@ -1,37 +1,25 @@
-<html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
-        <script type="text/javascript" src="/js/SignUpValidation.js"></script>
-    </head>
+<form action="/user/doCreate" class="form" method="post" onsubmit="validateForm()">
+    <div class="form-heading">
+        <h2 class="form-title"><?= $heading ?></h2>
+    </div>
 
-    <body>
-        <main class="grid">
-            <article>
-                <form action="/user/doCreate" method="post" class="col-6" onsubmit="validateForm()">
-                    <div class="form-group">
-                        <label for="username">Benutzername</label>
-                        <input type="text" id="username" name="username" placeholder="Geben Sie Ihren Benutzernamen ein." class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="password">Passwort</label>
-                        <input type="password" id="password" name="password" placeholder="Geben Sie Ihr Passwort ein." class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="passwordconf">Passwort bestätigen</label>
-                        <input type="password" id="passwordconf" name="passwordconf"  placeholder="Bestätigen Sie Ihr Passwort." class="form-control">
-                    </div>
-                    <button type="submit" name="send" class="btn btn-primary">Absenden</button>
-                </form>
-            </article>
-            <article>
-                <p>
-                    Du hast bereits ein Account?<br>
-                    Dann melde dich jetzt <a href="/signin">hier</a> an.
-                </p>
-            </article>
-        </main>
-    </body>
-</html>
+    <div class="form-field">
+        <input class="form-input" id="username" name="username" placeholder="Benutzername" type="text" required>
+        <i class='bx bxs-user form-icon'></i>
+    </div>
+    <div class="form-field">
+        <input class="form-input" id="password" name="password" placeholder="Passwort" type="password" required>
+        <i class='bx bxs-lock-alt form-icon'></i>
+    </div>
+    <div class="form-field">
+        <input class="form-input" id="passwordConfirm" placeholder="Passwort bestätigen" type="password" required>
+        <i class='bx bxs-lock-alt form-icon'></i>
+    </div>
 
+    <div class="form-text">
+        <p>Hast du bereits einen Account?</p>
+        <p>Dann melde dich <a class="link" href="/authentication/login">hier</a> an</p>
+    </div>
 
+    <button class="form-submit" name="send" type="submit">Absenden</button>
+</form>
