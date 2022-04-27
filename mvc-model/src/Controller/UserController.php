@@ -40,6 +40,14 @@ class UserController
 
     }
 
+    public function signup(){
+        $view = new View('user/create');
+
+        $view->title = 'Registrieren';
+        $view->heading = 'Registrieren';
+        $view->display();
+    }
+
     public function doCreate()
     {
         if (isset($_POST['send'])) {
