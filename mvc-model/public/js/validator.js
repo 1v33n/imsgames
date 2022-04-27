@@ -1,53 +1,3 @@
-function validateForm() {
-    //collect form data in JavaScript variables  
-    var pw1 = document.getElementById("password").value;
-    var pw2 = document.getElementById("passwordconf").value;
-    var name1 = document.getElementById("username").value;
-
-    //check empty first name field  
-    if (name1 == "") {
-        document.getElementById("blankMsg").innerHTML = "**Fill the first name";
-        return false;
-    }
-
-    //character data validation  
-    if (!isNaN(name1)) {
-        document.getElementById("blankMsg").innerHTML = "**Only characters are allowed";
-        return false;
-    }
-
-    //check empty password field  
-    if (pw1 == "") {
-        document.getElementById("message1").innerHTML = "**Fill the password please!";
-        return false;
-    }
-
-    //check empty confirm password field  
-    if (pw2 == "") {
-        document.getElementById("message2").innerHTML = "**Enter the password please!";
-        return false;
-    }
-
-    //minimum password length validation  
-    if (pw1.length < 8) {
-        document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";
-        return false;
-    }
-
-    //maximum length of password validation  
-    if (pw1.length > 15) {
-        document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";
-        return false;
-    }
-
-    if (pw1 != pw2) {
-        document.getElementById("message2").innerHTML = "**Passwords are not same";
-        return false;
-    } else {
-        return "";
-    }
-}
-
 function validateUsername(event) {
     const control = event.currentTarget.parentElement;
     let value = event.currentTarget.value;
@@ -65,8 +15,8 @@ function validateUsername(event) {
         setInvalid(control, message);
     } else {
         setValid(control);
-        updateSubmit(control.parentElement);
     }
+    updateSubmit(control.parentElement);
 }
 
 function validatePassword(event) {
@@ -76,26 +26,61 @@ function validatePassword(event) {
     if (value.length < 1) {
         message = 'Passwort darf nicht leer sein.';
         setInvalid(control, message);
-    } else if (value.length < 7) {
+    } else if (value.length < 6) {
         message = 'Password muss min. 6 Zeichen lang sein.';
         setInvalid(control, message);
     } else {
         setValid(control);
-        updateSubmit(control.parentElement);
     }
+    updateSubmit(control.parentElement);
+}
+
+function validateConfirmedPassword() {
+    const control = event.currentTarget.parentElement;
+    let value = event.currentTarget.value;
+    const password = document.getElementById('password');
+
+    if (value.length < 1) {
+        message = 'Bestätigtes Passwort darf nicht leer sein.';
+        setInvalid(control, message);
+    } else if (password !== null && value !== password.value) {
+        message = 'Passwort stimmt nicht überein.';
+        setInvalid(control, message);
+    } else {
+        setValid(control);
+    }
+    updateSubmit(control.parentElement);
 }
 
 function updateSubmit(form) {
-    const controls = form.querySelectorAll('.form-field');
-    controls.forEach()
+    if (form !== null) {
+        const fields = form.querySelectorAll('.form-field');
+        let update = false;
+
+        fields.forEach(field => {
+            if (field.classList.contains('valid')) {
+                update = true;
+            } else {
+                update = false;
+            }
+        });
+
+        if (update) {
+            form.querySelector('.form-submit').removeAttribute('disabled');
+        } else {
+            form.querySelector('.form-submit').setAttribute('disabled', '');
+        }
+    }
 }
 
-function setValid(element) {
-    element.classList.add('valid');
-    element.classList.remove('invalid')
+function setValid(control) {
+    control.classList.add('valid');
+    control.classList.remove('invalid')
 }
 
 function setInvalid(control, message) {
     control.classList.remove('valid');
     control.classList.add('invalid');
+
+    control.querySelector('.tooltip-message').innerText = message;
 }
