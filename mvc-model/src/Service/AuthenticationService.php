@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Database\ConnectionHandler;
 use App\Repository\UserRepository;
 use RuntimeException;
 
@@ -11,6 +12,10 @@ class AuthenticationService
     {
         // Den Benutzer anhand des usernames auslesen
         $userRepository = new UserRepository();
+
+        // to prevent sql injections
+        $username = ConnectionHandler::escape($username);
+        $password = ConnectionHandler::escape($password);
 
         $user = $userRepository->readByName($username);
 
@@ -27,11 +32,16 @@ class AuthenticationService
                 session_start();
                 $_SESSION['id'] = $user->id;
 
-                return true;
+                return [true];
+                $authenticationMessage = 'Erfolgreich eingeloggt';
+            } else {
+                $authenticationMessage = 'Passwort stimmt nicht';
             }
+        } else {
+            $authenticationMessage = 'Benutzername nicht gefunden';
         }
 
-        return false;
+        return [false, $authenticationMessage];
     }
 
     public static function logout()
@@ -43,8 +53,6 @@ class AuthenticationService
 
         // TODO: Session zerstören
         session_destroy();
-
-        //return header('Location: /signin');
     }
 
     public static function isAuthenticated()

@@ -18,7 +18,7 @@
 
     <div class="form-text">
         <p>Hast du bereits einen Account?</p>
-        <p>Dann melde dich <a class="link" href="/authentication/login">hier</a> an</p>
+        <p>Dann melde dich <a class="link" href="/authentication">hier</a> an</p>
     </div>
 
     <button class="form-submit" name="send" type="submit">Absenden</button>
