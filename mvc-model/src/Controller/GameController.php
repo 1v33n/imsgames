@@ -43,8 +43,7 @@ class GameController
 
         // to get game with url id
         $gameRepository = new GameRepository();
-        $game = $gameRepository->readById($_GET['game_id']);
-
+        $game = $gameRepository->readById($_GET['id']);
         $view->game = $game;
         $view->title = $game->name;
         $view->heading = $game->name;
