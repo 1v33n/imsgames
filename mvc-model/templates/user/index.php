@@ -1,8 +1,4 @@
-<?php
-    if($isLoggedIn) {
-        echo "eingeloggt"; 
-    }
-?>
+
 
 <!-- <article class="hreview open special">
 	<?php if (empty($users)): ?>
