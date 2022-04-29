@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `dir` text NOT NULL,
+  `description` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -126,9 +127,4 @@ INSERT INTO `game` (`id`, `name`, `dir`, `description`) VALUES
 (2, '2048', '2048', 'Das Ziel ist es, eine höchstmögliche Punktzahl zu erlangen.\r\nMan steuert mit den Pfeiltasten. Zwei gliche Zahlen können zusammengeführt werden. Somit erlangt man eine höhere Zahl. Desto höhere Zahlen man zusammenführt, desto mehr Punkte punkte erlangt man.'),
 (3, 'Catch The Ball', 'basketball', 'Das Ziel ist es, alle Bälle einzufangen. Damit man dies auch erreichen kann, muss man mit den Pfeiltasten links und rechts die Person steuern. Um einen Ball einzufangen, muss man darunter stehen. Fällt ein Ball auf den Boden, ist GameOver.');
 COMMIT;
--- Constraints der Tabelle `game`
---
-ALTER TABLE `game`
-  ADD `description` text
-;
-COMMIT;
+
