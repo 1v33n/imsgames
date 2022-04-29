@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\View\View;
+use App\Repository\GameRepository;
 use App\Service\AuthenticationService;
 
 /**
@@ -41,10 +42,14 @@ class DefaultController
         // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
         //   "default_index" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
-        $view = new View('default/index');
+        $view = new View('game/index');
         $view->isLoggedIn = AuthenticationService::isAuthenticated();
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
+        $view->isLoggedIn = isset($_SESSION['id']);
+        $gameRepository = new GameRepository();
+        $view->games = $gameRepository->readAll();
+
         $view->display();
     }
 }
