@@ -1,5 +1,5 @@
 <div class="form-wrapper">
-    <form action="/request/create" method="post" class="form">
+    <form action="/request/create" method="post" class="form request-form">
         <div class="form-heading">
             <h2 class="form-title"><?= $heading ?></h2>
         </div>
