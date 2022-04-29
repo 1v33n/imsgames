@@ -216,7 +216,7 @@ body {
 }
 
 .game {
-    position: absolute;
+    position: relative;
 }
 
 .form {
