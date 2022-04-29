@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CommentRepository;
+use App\Service\AuthenticationService;
 use App\View\View;
 
 /**
@@ -12,14 +13,12 @@ class CommentController
 {
     public function create()
     {
-        if (isset($_POST['send'])) {
             $comment = htmlentities($_POST['comment']) ;
             $game_id = htmlentities($_GET['id']) ;
-            $user_id = htmlentities($_SESSION['id']);
+            $user_id = htmlentities(AuthenticationService::getAuthenticatedUser()->id);
 
             $commentRepository = new CommentRepository();
             $commentRepository->create($comment, $game_id, $user_id);
-        }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /game/selected?id='. $_GET['id']);
     }
