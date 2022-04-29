@@ -15,12 +15,11 @@ class GameController
     {
         $view = new View('game/index');
         $view->title = 'Games';
+        $gameRepository = new GameRepository();
         $view->heading = 'Games';
+        $view->games = $gameRepository->readAll();
         $view->isLoggedIn = !isset($_SESSION['id']);
         // to display all games
-        $gameRepository = new GameRepository();
-        $view->games = $gameRepository->readAll();
-
         $view->display();
     }
     // to send data by email
@@ -34,7 +33,7 @@ class GameController
         $view = new View('game/request');
         $view->title = 'Request';
         $view->heading = 'Request';
-        $view->isLoggedIn = AuthenticationService::isAuthenticated();
+        $view->isLoggedIn = !isset($_SESSION['id']);
         $view->display();
     }
 
