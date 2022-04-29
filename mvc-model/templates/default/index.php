@@ -1,3 +1,6 @@
+
+Hallo Welt!
+
 <?php
     if($isLoggedIn) {
         echo "<a href='/authentication/logout'>Logout</a>";
