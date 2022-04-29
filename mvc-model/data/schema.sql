@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL UNIQUE,
   `link` varchar(255) NOT NULL UNIQUE,
+  `textarea` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
