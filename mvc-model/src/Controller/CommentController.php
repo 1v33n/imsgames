@@ -16,7 +16,7 @@ class CommentController
             $comment = htmlentities($_POST['comment']) ;
             $game_id = htmlentities($_POST['game_id']) ;
             $user_id = htmlentities($_SESSION['id']);
-
+            
             $commentRepository = new CommentRepository();
             $commentRepository->create($comment, $game_id, $user_id);
         }

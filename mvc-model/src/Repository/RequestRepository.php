@@ -14,12 +14,12 @@ class RequestRepository extends Repository
      */
     protected $tableName = 'request';
 
-    public function create($email, $link)
+    public function create($email, $link, $textarea)
     {
-        $query = "INSERT INTO $this->tableName (email, link) VALUES (?, ?)";
+        $query = "INSERT INTO $this->tableName (email, link, textarea) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ss', $email, $link);
+        $statement->bind_param('sss', $email, $link, $textarea);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
