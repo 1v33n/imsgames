@@ -8,11 +8,6 @@
 
                 <div class="box-content">
                     <div class="output-field">
-                        <h4>Verzeichnis</h4>
-                        <p class="box-text"><?= $game->dir; ?></p>
-                    </div>
-
-                    <div class="output-field">
                         <h4>Beschreibung</h4>
                         <p class="box-text"><?= $game->description; ?></p>
                     </div>
@@ -30,11 +25,6 @@
                     </div>
 
                     <div class="box-content">
-                        <div class="box-field">
-                            <h4 class="field-title">Verzeichnis</h4>
-                            <p class="box-text"><?= $game->dir; ?></p>
-                        </div>
-
                         <div class="box-field">
                             <h4 class="field-title">Beschreibung</h4>
                             <textarea class="box-textarea" readonly><?= $game->description; ?></textarea>

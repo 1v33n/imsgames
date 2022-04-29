@@ -182,14 +182,6 @@ body {
     width: 300px;
 }
 
-.box-field {
-    background-color: rgba(230, 230, 230, 0.6);
-    border-radius: 4px;
-    padding: 8px;
-    margin: 12px 0;
-    width: 100%;
-}
-
 .box-button {
     background-color: #657db8;
     border: none;
@@ -206,12 +198,26 @@ body {
     transform: scale(1.015);
 }
 
+.box-header {
+    background-color: rgba(230, 230, 230, 0.6);
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.box-field {
+    background-color: rgba(230, 230, 230, 0.6);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 12px 0;
+    width: 100%;
+}
+
 .box-textarea {
     background-color: transparent;
     border: none;
     font-family: var(--font-family);
     font-size: 14px;
-    height: 54px;
+    height: 128px;
     outline: none;
     margin: 4px 0 0;
     resize: none;
