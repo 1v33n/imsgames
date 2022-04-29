@@ -14,12 +14,12 @@
     ?>
     <div class="form-field">
         <input class="form-input" name="username" type="text" placeholder="Benutzername" onkeyup="validateUsername(event)" required>
-        <i class='bx bxs-user form-icon'></i>
+        <i class='bx bxs-user'></i>
     </div>
 
     <div class="form-field">
         <input class="form-input" name="password" type="password" placeholder="Passwort" required>
-        <i class='bx bxs-lock-alt form-icon'></i>
+        <i class='bx bxs-lock-alt'></i>
     </div>
 
     <div class="form-text">
