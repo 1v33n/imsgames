@@ -222,7 +222,10 @@ body {
 .box-textarea::-webkit-scrollbar {
     display: none;
 }
-
+.disableScroll{
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
 .games-wrapper {
     display: flex;
     align-items: center;
