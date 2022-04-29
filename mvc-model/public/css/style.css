@@ -228,6 +228,11 @@ body {
     display: none;
 }
 
+.disableScroll{
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+
 .comments {
     display: flex;
     flex-direction: column;
@@ -264,6 +269,7 @@ body {
 .comment-textarea {
     height: 100%;
 }
+
 
 .games-wrapper {
     display: flex;

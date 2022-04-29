@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Repository\GameRepository;
+use App\Repository\CommentRepository;
+use App\Repository\UserRepository;
 use App\View\View;
 use App\Service\AuthenticationService;
 
@@ -42,10 +44,18 @@ class GameController
         $view->isLoggedIn = AuthenticationService::isAuthenticated();
         // to get game with url id
         $gameRepository = new GameRepository();
+        $commentRepository = new CommentRepository();
+        $userRepository = new UserRepository();
+        $view->users =$userRepository->readAll();
+        $view->comments = $commentRepository->readAllCommentsById($_GET['id']);
         $game = $gameRepository->readById($_GET['id']);
+
         $view->game = $game;
         $view->title = $game->name;
         $view->heading = $game->name;
+
         $view->display();
     }
+
+
 }
