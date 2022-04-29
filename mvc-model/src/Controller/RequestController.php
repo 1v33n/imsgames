@@ -15,9 +15,10 @@ class RequestController
         if (isset($_POST['send'])) {
             $email = htmlentities($_POST['email']);
             $link = htmlentities($_POST['link']);
+            $textarea = htmlentities($_POST['textarea']);
 
             $requestRepository = new RequestRepository();
-            $requestRepository->create($email, $link);
+            $requestRepository->create($email, $link, $textarea);
         }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
          header('Location: /game/request');
