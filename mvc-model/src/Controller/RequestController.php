@@ -10,6 +10,12 @@ use App\View\View;
  */
 class RequestController
 {
+    private function index() {
+        $view = new View('request/index');
+        $view->title = "Request";
+        $view->display();
+    }
+
     public function create()
     {
         if (isset($_POST['send'])) {
@@ -19,9 +25,10 @@ class RequestController
 
             $requestRepository = new RequestRepository();
             $requestRepository->create($email, $link, $textarea);
+
+            $this->index();
         }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-         header('Location: /game/request');
     }
 
     public function delete()

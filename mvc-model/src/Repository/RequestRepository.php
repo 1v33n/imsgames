@@ -16,6 +16,10 @@ class RequestRepository extends Repository
 
     public function create($email, $link, $textarea)
     {
+        $email = ConnectionHandler::escape($email);
+        $link = ConnectionHandler::escape($link);
+        $textarea = ConnectionHandler::escape($textarea);
+
         $query = "INSERT INTO $this->tableName (email, link, textarea) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);

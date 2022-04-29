@@ -35,7 +35,7 @@ function validatePassword(event) {
     updateSubmit(control.parentElement);
 }
 
-function validateConfirmedPassword() {
+function validateConfirmedPassword(event) {
     const control = event.currentTarget.parentElement;
     let value = event.currentTarget.value;
     const password = document.getElementById('password');
@@ -52,6 +52,55 @@ function validateConfirmedPassword() {
     updateSubmit(control.parentElement);
 }
 
+function validateEmail(event) {
+    const control = event.currentTarget.parentElement;
+    let value = event.currentTarget.value;
+    const emailRegex = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+
+    if (value.length < 1) {
+        message = 'Email darf nicht leer sein.';
+        setInvalid(control, message);
+    } else if (!value.match(emailRegex)) {
+        message = 'Email ist ungültig.';
+        setInvalid(control, message);
+    } else {
+        setValid(control);
+    }
+    updateSubmit(control.parentElement.parentElement.parentElement);
+}
+
+function validateLink(event) {
+    const control = event.currentTarget.parentElement;
+    let value = event.currentTarget.value;
+    const linkRegex = '^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$';
+
+    if (value.length < 1) {
+        message = 'Link darf nicht leer sein.';
+        setInvalid(control, message);
+    } else if (!value.match(linkRegex)) {
+        message = 'Link ist ungültig.';
+        setInvalid(control, message);
+    } else {
+        setValid(control);
+    }
+    updateSubmit(control.parentElement);
+}
+
+function validateDescription(event) {
+    const control = event.currentTarget.parentElement;
+    let value = event.currentTarget.value;
+
+    if (value.length < 1) {
+        message = 'Beschreibung darf nicht leer sein.';
+        setInvalid(control, message);
+    } else if (value.length < 10) {
+        message = 'Beschreibung muss min. 20 Buchstaben beinhalten';
+        setInvalid(control, message);
+    } else {
+        setValid(control);
+    }
+    updateSubmit(control.parentElement);
+}
 function updateSubmit(form) {
     if (form !== null) {
         const fields = form.querySelectorAll('.form-field');
