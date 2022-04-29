@@ -3,31 +3,29 @@
         <object class="game" data="/games/<?= $game->dir; ?>/index.html"></object>
     </div>
 
+    <form action="/comment/create?id=<?= $game->id; ?>" class="comment-form" method="post">
+        <textarea class="comment-textarea" name="comment" id="comment" placeholder="Kommentar hinzufügen"></textarea>
+        <button type="submit">Neuer Kommentar</button>
+    </form>
+
     <div class="comments">
         <?php if (empty($kommentarliste)): ?>
-            <div class="dhd">
-                <h2 class="item title">Kein Kommentar gefunden.</h2>
+            <div class="comment-card">
+                <h3>Es gibt zurzeit keine Kommentare</h3>
             </div>
         <?php else: ?>
             <?php foreach ($kommentarliste as $kommentar): ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <?= $kommentar->titel; ?>
+                <div class="comment-card">
+                    <div class="comment-user">
+                        <i class="bx bxs-user-circle bx-cu"></i>
                     </div>
-                    <div class="panel-body">
-                        <?= $kommentar->kommentar; ?>
+
+                    <div class="comment-content">
+                        <h4 class="comment-username">dennymarti</h4>
+                        <p class="comment-text"><?= $kommentar->kommentar; ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-    <article>
-        <div class="embed-responsive embed-responsive-16by9">
-
-        </div>
-        <form action="/comment/create?id=<?= $game->id; ?>" method="post">
-            <textarea name="comment" id="comment" cols="20" rows="5"></textarea>
-            <button type="submit">Neuer Kommentar</button>
-        </form>
-    </article>
 </div>
