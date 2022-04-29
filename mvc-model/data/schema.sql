@@ -122,13 +122,13 @@ ALTER TABLE `statistic`
 --
 -- Daten für Tabelle `game`
 --
-
 INSERT INTO `game` (`id`, `name`, `dir`, `description`) VALUES
 (1, 'TicTacToe', 'TicTacToe', 'Das Ziel ist es, 3 X oder O vertikal, horizontal oder diagonal anzuordnen. \r\nMan spielt entweder zu zweit oder gegen sich selbst. Um ein Symbol zu setzen, muss man nur auf das gewählte Kästchen klicken. Derjenige, welcher zuerst 3 Symbole in der richtigen Anordnung hat, hat gewonnen. Konnte am Ende der Runde noch keine Reihe erzielt werden, gibt es ein Unentschieden. '),
 (2, '2048', '2048', 'Das Ziel ist es, eine höchstmögliche Punktzahl zu erlangen.\r\nMan steuert mit den Pfeiltasten. Zwei gliche Zahlen können zusammengeführt werden. Somit erlangt man eine höhere Zahl. Desto höhere Zahlen man zusammenführt, desto mehr Punkte punkte erlangt man.'),
 (3, 'Catch The Ball', 'basketball', 'Das Ziel ist es, alle Bälle einzufangen. Damit man dies auch erreichen kann, muss man mit den Pfeiltasten links und rechts die Person steuern. Um einen Ball einzufangen, muss man darunter stehen. Fällt ein Ball auf den Boden, ist GameOver.'),
-(4, 'Chicken', 'chicken', 'Das Ziel ist es, so viele Hühner wie möglich "einzufangen". Man hat eine begrenzte Zeit, um die Hühner zu bekommen. Um ein Huhn einzufangen, muss man auf dieses klicken. Desto mehr Hühner man anklickt, desto mehr Punkte erreicht man. '),
-(5, 'PingPong', 'PingPong', 'In diesem Spiel spielt man gegen den Computer. Das Ziel ist es, so viele Runden wie möglich gegen den Computer zu gewinnen. Der Ball muss immer auf den Schläger treffen, damit der Ball wieder in die andere Richtung spickt. Man steuert mit den Tasten "w" und "s". Die Taste "w" bewegt den Schläger nach oben, "s" nach unten.');
+(4, 'Chicken', 'chicken', 'Das Ziel ist es, so viele Hühner wie möglich \"einzufangen\". Man hat eine begrenzte Zeit, um die Hühner zu bekommen. Um ein Huhn einzufangen, muss man auf dieses klicken. Desto mehr Hühner man anklickt, desto mehr Punkte erreicht man. '),
+(5, 'PingPong', 'PingPong', 'In diesem Spiel spielt man gegen den Computer. Das Ziel ist es, so viele Runden wie möglich gegen den Computer zu gewinnen. Der Ball muss immer auf den Schläger treffen, damit der Ball wieder in die andere Richtung spickt. Man steuert mit den Tasten \"w\" und \"s\". Die Taste \"w\" bewegt den Schläger nach oben, \"s\" nach unten.'),
+(6, 'Snake', 'Snake', 'Das Ziel dieses spieles ist es, die Schlange so lange wie möglich zu bekommen. Dies kann erreicht werden, indem man üer die roten Kästchen (Äpfel) rutscht. Gesteuert wird mit \"wsad\". \"w\" um nach oben zu schlängeln, \"d\" nach rechts, \"a\" nach links und \"s\" nach unten. Fährt man in sich selbst ist GameOver. Wenn man an die Wand gelangt kommt man auf der anderen wieder heraus.');
 
 COMMIT;
 

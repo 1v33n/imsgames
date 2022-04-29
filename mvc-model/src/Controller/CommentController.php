@@ -14,14 +14,14 @@ class CommentController
     {
         if (isset($_POST['send'])) {
             $comment = htmlentities($_POST['comment']) ;
-            $game_id = htmlentities($_POST['game_id']) ;
+            $game_id = htmlentities($_GET['id']) ;
             $user_id = htmlentities($_SESSION['id']);
-            
+
             $commentRepository = new CommentRepository();
             $commentRepository->create($comment, $game_id, $user_id);
         }
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-         header('Location: /game/selected?id='. $_GET['id']);
+        header('Location: /game/selected?id='. $_GET['id']);
     }
 
     public function delete()

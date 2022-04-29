@@ -26,7 +26,7 @@
 
         </div>
         <form action="/comment/create?id=<?= $game->id; ?>" method="post">
-            <textarea name="comment" id="" cols="20" rows="5"></textarea>
+            <textarea name="comment" id="comment" cols="20" rows="5"></textarea>
             <button type="submit">Neuer Kommentar</button>
         </form>
     </article>
