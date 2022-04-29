@@ -5,9 +5,9 @@
 
     <div class="form-field">
         <input class="form-input" name="username" placeholder="Benutzername" type="text" onkeyup="validateUsername(event)" onfocusout="validateUsername(event)" required>
-        <i class="bx bxs-user"></i>
-        <i class="bx bx-x-circle"></i>
-        <i class="bx bx-check-circle"></i>
+        <i class="bx bxs-user bxf"></i>
+        <i class="bx bx-x-circle bx-vw"></i>
+        <i class="bx bx-check-circle bx-vs"></i>
 
         <div class="tooltip-box">
             <p class="tooltip-message"></p>
@@ -15,9 +15,9 @@
     </div>
     <div class="form-field">
         <input class="form-input" id="password" name="password" placeholder="Passwort" type="password" onkeyup="validatePassword(event)" onfocusout="validatePassword(event)" required>
-        <i class="bx bxs-lock-alt"></i>
-        <i class="bx bx-x-circle"></i>
-        <i class="bx bx-check-circle"></i>
+        <i class="bx bxs-lock-alt bxf"></i>
+        <i class="bx bx-x-circle bx-vw"></i>
+        <i class="bx bx-check-circle bx-vs"></i>
 
         <div class="tooltip-box">
             <p class="tooltip-message"></p>
@@ -25,9 +25,9 @@
     </div>
     <div class="form-field">
         <input class="form-input" placeholder="Passwort bestätigen" type="password" onkeyup="validateConfirmedPassword(event)" onfocusout="validateConfirmedPassword(event)" required>
-        <i class="bx bxs-lock-alt"></i>
-        <i class="bx bx-x-circle"></i>
-        <i class="bx bx-check-circle"></i>
+        <i class="bx bxs-lock-alt bxf"></i>
+        <i class="bx bx-x-circle bx-vw"></i>
+        <i class="bx bx-check-circle bx-vs"></i>
 
         <div class="tooltip-box">
             <p class="tooltip-message"></p>

@@ -13,13 +13,13 @@
         }
     ?>
     <div class="form-field">
-        <input class="form-input" name="username" type="text" placeholder="Benutzername" onkeyup="validateUsername(event)" required>
-        <i class='bx bxs-user'></i>
+        <input class="form-input" name="username" type="text" placeholder="Benutzername" required>
+        <i class="bx bxs-user bxf"></i>
     </div>
 
     <div class="form-field">
         <input class="form-input" name="password" type="password" placeholder="Passwort" required>
-        <i class='bx bxs-lock-alt'></i>
+        <i class="bx bxs-lock-alt bxf"></i>
     </div>
 
     <div class="form-text">

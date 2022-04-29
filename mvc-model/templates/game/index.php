@@ -1,27 +1,49 @@
-<article class="hreview open special">
-	<?php if (empty($games)): ?>
-		<div class="dhd">
-			<h2 class="item title">Hoopla! Es gibt zurzeit keine Games</h2>
-		</div>
-	<?php else: ?>
-		<?php foreach ($games as $game): ?>
-			<div class="panel panel-default mb-5">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-sm">
-							<h4><div class="panel-heading font-weight-bold">Name:<?= $game->name; ?></div></h4>
-							<div class="panel-body">
-								<p class="description">Verzeichnis: <?= $game->dir; ?> Beschreibung: <?= $game->description; ?></p>
-							</div>
-						</div>
-						<div class="col-sm">
-							<div class="container d-flex flex-column">
-								<a href="/game/selected?id=<?= $game->id; ?>"><button class="btn btn-primary">Ansehen</button></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<?php endforeach; ?>
-	<?php endif; ?>
-</article>
+<div class="games-wrapper">
+    <?php if (empty($games)): ?>
+        <div class="box">
+            <div class="box-header">
+                <h2 class="box-title"></h2>
+            </div>
+
+            <div class="box-content">
+                <div class="output-field">
+                    <h4>Verzeichnis</h4>
+                    <p class="box-text"><?= $game->dir; ?></p>
+                </div>
+
+                <div class="output-field">
+                    <h4>Beschreibung</h4>
+                    <p class="box-text"><?= $game->description; ?></p>
+                </div>
+            </div>
+
+            <div class="game-box-footer">
+                <a href="/game/selected?id=<?= $game->id; ?>"><button class="btn btn-primary">Ansehen</button></a>
+            </div>
+        </div>
+    <?php else: ?>
+        <?php foreach ($games as $game): ?>
+            <div class="box">
+                <div class="box-header">
+                    <h2 class="box-title"><?= $game->name; ?></h2>
+                </div>
+
+                <div class="box-content">
+                    <div class="box-field">
+                        <h4 class="field-title">Verzeichnis</h4>
+                        <p class="box-text"><?= $game->dir; ?></p>
+                    </div>
+
+                    <div class="box-field">
+                        <h4 class="field-title">Beschreibung</h4>
+                        <p class="box-text"><?= $game->description; ?></p>
+                    </div>
+                </div>
+
+                <div class="box-footer">
+                    <a href="/game/selected?id=<?= $game->id; ?>"><button class="box-button">Ansehen</button></a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
