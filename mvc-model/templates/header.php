@@ -36,7 +36,7 @@
                 </li>
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/authentication/logout">Logout</a>
+                    <a class="nav-link nav-logout" href="/authentication/logout">Logout</a>
                 </li>
             <?php endif; ?>
         </ul>

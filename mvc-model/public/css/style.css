@@ -31,33 +31,37 @@ body {
 .bx {
     font-size: 20px;
     position: absolute;
+    pointer-events: none;
     transition: all 0.3s ease;
 }
 
-.bxs-user, .bxs-lock-alt {
+.bxf {
     color: #ccc;
     left: 0;
-    pointer-events: none;
+}
+
+.bx-vs {
+    color: lightgreen;
+    opacity: 0;
+    right: 0;
+}
+
+.bx-vw {
+    color: red;
+    opacity: 0;
+    right: 0;
 }
 
 .bx-error-circle {
     position: relative;
 }
 
-.bx-check-circle {
-    color: lightgreen;
-    opacity: 0;
-    right: 0;
-}
-
-.bx-x-circle {
-    color: red;
-    opacity: 0;
-    right: 0;
-}
-
 .bxs-grid-alt {
     position: relative;
+}
+
+.bxn {
+    opacity: 1 !important;
 }
 
 .header {
@@ -112,7 +116,6 @@ body {
     position: relative;
     margin: 0 auto;
     max-width: 1024px;
-    height: fit-content;
     width: 100%;
 }
 .responsive-iframe{
@@ -126,11 +129,8 @@ body {
     margin-top: 3rem;
 }
 .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 0;
-    height: 100vh;
+    padding: 90px 0 0;
+    position: relative;
     width: 100%;
 }
 
@@ -154,6 +154,68 @@ body {
 .bx-error-circle {
     align-self: center;
     font-size: 20px;
+}
+
+.box {
+    box-shadow: 0 2px 12px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    height: fit-content;
+    min-height: 300px;
+    padding: 1rem;
+    position: relative;
+    min-width: 300px;
+    width: fit-content;
+}
+
+.box-field {
+    background-color: rgba(230, 230, 230, 0.6);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.box-button {
+    background-color: #657db8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    padding: 8px 0;
+    outline: none;
+    width: 100%;
+}
+
+.box-button:hover {
+    transform: scale(1.015);
+}
+
+.games-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+}
+
+.game-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+}
+
+.game {
+    position: absolute;
 }
 
 .form {
@@ -213,11 +275,7 @@ body {
     border-bottom: 2px solid #043248;
 }
 
-.form-input:is(:focus, :valid) ~ .bxs-user {
-    color: #043248;
-}
-
-.form-input:is(:focus, :valid) ~ .bxs-lock-alt {
+.form-input:is(:focus, :valid) ~ .bxf {
     color: #043248;
 }
 
@@ -250,6 +308,51 @@ body {
 
 .form-submit:disabled {
     opacity: 0.6;
+}
+
+.notification-box {
+    animation: slide forwards 2s;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 18px 20px 18px;
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.bxn {
+    position: relative;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.bxc {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.notification-message {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1rem;
+}
+
+.notification-title {
+    color: #212529;
+    font-weight: 600;
 }
 
 .tooltip-box {
@@ -323,4 +426,11 @@ body {
         font-size: 24px;
         padding: 2px;
     }
+
+    .games-wrapper {
+        gap: 0;
+    }
+}
+
+@keyframes slide {
 }
