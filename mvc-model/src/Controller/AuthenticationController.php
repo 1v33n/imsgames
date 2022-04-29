@@ -21,7 +21,12 @@ class AuthenticationController
 
         $loginResult = AuthenticationService::login($username, $password);
         if ($loginResult[0]) {
-            header('Location: /default');
+            $view = new View("default/index");
+            $view->title = "Startseite";
+            $view->heading = "Startseite";
+            $view->isLoggedIn = true;
+            $view->authenticationSuccess = $loginResult[1];
+            $view->display();
         } else {
             $view = new View('/authentication/login');
             $view->title = 'Login';

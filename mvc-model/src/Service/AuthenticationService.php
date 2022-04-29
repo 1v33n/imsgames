@@ -32,8 +32,8 @@ class AuthenticationService
                 session_start();
                 $_SESSION['id'] = $user->id;
 
-                return [true];
                 $authenticationMessage = 'Erfolgreich eingeloggt';
+                return [true, $authenticationMessage];
             } else {
                 $authenticationMessage = 'Passwort stimmt nicht';
             }
