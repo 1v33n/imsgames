@@ -42,6 +42,7 @@ class GameController
     public function selected() {
         $view = new View('game/selected');
         $view->isLoggedIn = AuthenticationService::isAuthenticated();
+        $view->userId = AuthenticationService::getAuthenticatedUser()->id;
         // to get game with url id
         $gameRepository = new GameRepository();
         $game = $gameRepository->readById($_GET['id']);
