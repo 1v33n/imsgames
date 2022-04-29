@@ -29,14 +29,11 @@
             </li>
             <?php if (!$this->isLoggedIn): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/authentication">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/user/signup">Sign up</a>
+                    <a class="nav-link nav-authentication" href="/authentication">Login</a>
                 </li>
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link nav-logout" href="/authentication/logout">Logout</a>
+                    <a class="nav-link nav-authentication" href="/authentication/logout">Logout</a>
                 </li>
             <?php endif; ?>
         </ul>

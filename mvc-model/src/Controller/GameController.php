@@ -18,7 +18,7 @@ class GameController
         $gameRepository = new GameRepository();
         $view->heading = 'Games';
         $view->games = $gameRepository->readAll();
-        $view->isLoggedIn = !isset($_SESSION['id']);
+        $view->isLoggedIn = AuthenticationService::isAuthenticated();
         // to display all games
         $view->display();
     }
@@ -33,13 +33,13 @@ class GameController
         $view = new View('game/request');
         $view->title = 'Request';
         $view->heading = 'Request';
-        $view->isLoggedIn = !isset($_SESSION['id']);
+        $view->isLoggedIn = AuthenticationService::isAuthenticated();
         $view->display();
     }
 
     public function selected() {
         $view = new View('game/selected');
-        $view->isLoggedIn = !isset($_SESSION['id']);
+        $view->isLoggedIn = AuthenticationService::isAuthenticated();
         // to get game with url id
         $gameRepository = new GameRepository();
         $game = $gameRepository->readById($_GET['id']);

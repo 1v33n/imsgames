@@ -87,6 +87,20 @@ body {
     width: 100vw;
 }
 
+.nav-authentication {
+    background-color: #657db8;
+    border-radius: 3px;
+    color: white !important;
+    font-weight: 400 !important;
+    line-height: 0 !important;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-authentication:hover {
+    opacity: 0.9;
+}
+
 .nav-brand {
     color: var(--dark);
     font-size: 24px;
@@ -460,9 +474,8 @@ body {
 .footer {
     position: relative;
     width: 100%;
-    /* Set the fixed height of the footer here */
     height: 60px;
-    line-height: 60px; /* Vertically center the text there */
+    line-height: 60px;
     background-color: #f5f5f5;
 }
 

@@ -46,7 +46,6 @@ class DefaultController
         $view->isLoggedIn = AuthenticationService::isAuthenticated();
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
-        $view->isLoggedIn = isset($_SESSION['id']);
         $gameRepository = new GameRepository();
         $view->games = $gameRepository->readAll();
 
