@@ -81,6 +81,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `request`
+--
+
+DROP TABLE IF EXISTS `request`;
+CREATE TABLE IF NOT EXISTS `request` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL UNIQUE,
+  `link` varchar(255) NOT NULL UNIQUE,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Constraints der exportierten Tabellen
 --
@@ -107,10 +121,11 @@ ALTER TABLE `statistic`
 -- Daten für Tabelle `game`
 --
 
-INSERT INTO `game` (`id`, `name`, `dir`) VALUES(1, 'TicTacToe', 'TicTacToe');
-INSERT INTO `game` (`id`, `name`, `dir`) VALUES(2, '2048', '2048');
-
-
+INSERT INTO `game` (`id`, `name`, `dir`, `description`) VALUES
+(1, 'TicTacToe', 'TicTacToe', 'Das Ziel ist es, 3 X oder O vertikal, horizontal oder diagonal anzuordnen. \r\nMan spielt entweder zu zweit oder gegen sich selbst. Um ein Symbol zu setzen, muss man nur auf das gewählte Kästchen klicken. Derjenige, welcher zuerst 3 Symbole in der richtigen Anordnung hat, hat gewonnen. Konnte am Ende der Runde noch keine Reihe erzielt werden, gibt es ein Unentschieden. '),
+(2, '2048', '2048', 'Das Ziel ist es, eine höchstmögliche Punktzahl zu erlangen.\r\nMan steuert mit den Pfeiltasten. Zwei gliche Zahlen können zusammengeführt werden. Somit erlangt man eine höhere Zahl. Desto höhere Zahlen man zusammenführt, desto mehr Punkte punkte erlangt man.'),
+(3, 'Catch The Ball', 'basketball', 'Das Ziel ist es, alle Bälle einzufangen. Damit man dies auch erreichen kann, muss man mit den Pfeiltasten links und rechts die Person steuern. Um einen Ball einzufangen, muss man darunter stehen. Fällt ein Ball auf den Boden, ist GameOver.');
+COMMIT;
 -- Constraints der Tabelle `game`
 --
 ALTER TABLE `game`
