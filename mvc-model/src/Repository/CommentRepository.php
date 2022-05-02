@@ -31,12 +31,12 @@ class CommentRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function create($comment, $user_id, $game_id)
+    public function create($comment,  $game_id, $user_id)
     {
-        $query = "INSERT INTO $this->tableName (comment, user_id, game_id) VALUES (?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (comment, game_id, user_id ) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('sii', $comment, $user_id, $game_id);
+        $statement->bind_param('sii', $comment, $game_id, $user_id);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

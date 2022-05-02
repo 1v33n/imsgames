@@ -13,9 +13,10 @@ class CommentController
 {
     public function create()
     {
+            AuthenticationService::requireLogin();
             $comment = htmlentities($_POST['comment']) ;
             $game_id = htmlentities($_GET['id']) ;
-            $user_id = htmlentities(AuthenticationService::getAuthenticatedUser()->id);
+            $user_id = $_SESSION['id'];
 
             $commentRepository = new CommentRepository();
             $commentRepository->create($comment, $game_id, $user_id);
